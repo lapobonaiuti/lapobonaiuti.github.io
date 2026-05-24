@@ -12,47 +12,58 @@
 /* ==========================================================================
    Impostazioni Base - Tutto Monospace
    ========================================================================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita fastidiosi scorrimenti laterali */
+}
+
 body {
     font-family: 'Courier Prime', monospace;
     background-color: var(--sfondo-sole);
     color: var(--testo-diario);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================================================
-   Header Banner Cinematografico (A tutto schermo)
+   Nuovo Header Banner Sottile (Inquadratura sulla linea del mare)
    ========================================================================== */
 .site-banner {
-    width: 100%;
-    height: 460px; /* Altezza panoramica del banner */
+    width: 100vw; /* Forza il banner a toccare i bordi esatti dello schermo */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    height: 280px; /* Più sottile e filante */
     background-size: cover;
-    background-position: center 65%; /* Inquadratura ottimizzata */
+    background-position: center 52%; /* Centrato millimetricamente sulla linea del mare */
     background-repeat: no-repeat;
     
     /* Centra la casella di testo sia in verticale che in orizzontale */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem; /* Stacco prima dell'archivio */
+    margin-bottom: 2.5rem; /* Ridotto: l'immagine ora è più vicina al primo post */
 }
 
 /* La casella "salva-contrasto" dietro al tuo nome */
 .header-box {
-    background-color: var(--sfondo-sole); /* Riprende il colore di sfondo della pagina */
-    padding: 2.5rem 4rem;
+    background-color: var(--sfondo-sole); 
+    padding: 1.5rem 3.5rem; /* Leggermente più compatta per adattarsi al banner sottile */
     text-align: center;
     border-radius: 2px;
     
     /* Un bordo finissimo e un'ombra morbida */
     border: 1px solid rgba(43, 38, 35, 0.08);
-    box-shadow: 0 15px 35px rgba(43, 38, 35, 0.15);
+    box-shadow: 0 10px 25px rgba(43, 38, 35, 0.12);
 }
 
 .header-box h1 {
-    font-size: 3.5rem;
+    font-size: 3rem; /* Ritoccato per le proporzioni della nuova altezza */
     font-weight: 700;
     margin: 0;
     color: var(--testo-diario);
@@ -60,10 +71,10 @@ body {
 }
 
 .header-box p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-style: italic;
     color: var(--blu-nostalgia);
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     margin-bottom: 0;
     word-spacing: -2px;
 }
@@ -78,6 +89,7 @@ body {
     display: flex;
     flex-direction: column; /* Su mobile si mettono uno sotto l'altro */
     gap: 3rem;
+    box-sizing: border-box;
 }
 
 /* Layout per schermi più grandi (Tablet e PC) */
