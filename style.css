@@ -1,119 +1,113 @@
 /* ==========================================================================
-   Palette "Estate '85 / Crema e Nostalgia"
+   Palette "Estate '85 / Macchina da Scrivere"
    ========================================================================== */
 :root {
-    --sfondo-sole: #fbf8f3;      /* Bianco lino sbiadito, caldo e riposante */
-    --testo-diario: #2b2623;     /* Un marrone bruciato scurissimo, molto più morbido del nero */
-    --rosso-terracotta: #c95a49; /* Il rosso dei mattoni al sole, caldo e nostalgico */
-    --blu-nostalgia: #5a7d8c;    /* Il blu del mare di Normandia o di una camicia di jeans sbiadita */
-    --carta-morbida: #f5efe6;   /* Il colore delle pagine di un vecchio libro tascabile */
+    --sfondo-sole: #fbf8f3;      /* Bianco lino sbiadito */
+    --testo-diario: #2b2623;     /* Marrone bruciato scuro (inchiostro vecchio) */
+    --rosso-terracotta: #c95a49; /* Il rosso dei mattoni al sole */
+    --blu-nostalgia: #5a7d8c;    /* Blu polvere / denim sbiadito */
+    --carta-morbida: #f5efe6;   /* Il colore dei fogli di carta spessa */
 }
 
-/* Impostazioni Base - Atmosfera Analogica */
+/* Impostazioni Base - Tutto Monospace */
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Courier Prime', monospace;
     background-color: var(--sfondo-sole);
     color: var(--testo-diario);
-    line-height: 1.7;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* Header Poetico e Leggero */
+/* Header: Come l'inizio di una sceneggiatura */
 header {
-    text-align: center; /* Torniamo alla simmetria classica, più intima */
-    max-width: 700px;
+    text-align: center; 
+    max-width: 680px;
     margin: 0 auto;
-    padding: 7rem 1.5rem 4rem;
+    padding: 6rem 1.5rem 3rem;
 }
 
 header h1 {
-    font-family: 'Cormorant Garamond', serif; /* Un font graziato, elegante e cinematografico */
-    font-size: 4.5rem;
-    font-weight: 400;
-    font-style: italic; /* L'italico dà subito quell'aria sognante e letteraria */
+    font-size: 3.5rem; /* Ridotto leggermente perché il monospace riempie di più */
+    font-weight: 700;
     margin: 0;
     color: var(--testo-diario);
+    letter-spacing: -1px;
 }
 
 header p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--blu-nostalgia);
-    margin-top: 0.5rem;
-    letter-spacing: 1px;
+    margin-top: 0.6rem;
+    word-spacing: -2px;
 }
 
 /* Struttura Centrale */
 main {
-    max-width: 700px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
 }
 
-/* I Post: Come Pagine di un Diario o Polaroid */
+/* I Post: Fogli di appunti sparsi sul tavolo */
 article {
     background-color: var(--carta-morbida);
-    border: none; /* Via i bordi netti */
-    border-radius: 4px; /* Un accenno di curvatura per ammorbidire le forme */
+    border: 1px solid rgba(43, 38, 35, 0.08); /* Un accenno di bordo sottile, come il taglio del foglio */
+    border-radius: 2px; /* Angoli quasi netti, tipici della carta */
     padding: 2.5rem;
     margin-bottom: 3rem;
-    /* Un'ombra impercettibile, come un foglio appoggiato al tavolo */
-    box-shadow: 0 4px 20px rgba(43, 38, 35, 0.04); 
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 15px rgba(43, 38, 35, 0.03); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Movimento cinematico e fluido al passaggio del mouse */
+/* Movimento leggero al passaggio del mouse */
 article:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(43, 38, 35, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(43, 38, 35, 0.06);
+    border-color: var(--blu-nostalgia);
 }
 
 article h2 {
-    font-family: 'Cormorant Garamond', serif;
     margin-top: 0;
-    font-size: 2.4rem;
-    font-weight: 500;
-    line-height: 1.2;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 article h2 a {
     color: var(--testo-diario);
     text-decoration: none;
-    transition: color 0.3s ease;
+    border-bottom: 1px dashed transparent; /* Sottolineatura accennata al passaggio */
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 article h2 a:hover {
     color: var(--rosso-terracotta);
+    border-bottom: 1px dashed var(--rosso-terracotta);
 }
 
-/* Scritte piccole / Date */
+/* Metadati / Date */
 small {
     display: block;
-    font-family: 'DM Sans', sans-serif;
     color: var(--blu-nostalgia);
-    margin-bottom: 1.5rem;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
 }
 
-/* Testo dei post */
+/* Testo dei post (Boccioli di testo puro) */
 article p {
-    font-size: 1.05rem;
-    color: rgba(43, 38, 35, 0.9);
+    font-size: 1rem;
+    color: var(--testo-diario);
+    text-align: justify; /* Rende l'effetto blocco di testo battuto a macchina */
 }
 
-/* Footer Sottile */
+/* Footer Discreto */
 footer {
     text-align: center;
     padding: 5rem 1rem 3rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--blu-nostalgia);
-    max-width: 700px;
+    max-width: 680px;
     margin: 0 auto;
 }
