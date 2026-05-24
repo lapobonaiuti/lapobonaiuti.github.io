@@ -1,127 +1,118 @@
-/* Variabili di colore e stile - Tema profondo ed elegante */
+/* Variabili - Palette "Salotto Milanese" */
 :root {
-    --sfondo-principale: #0d1117;
-    --sfondo-card: rgba(22, 27, 34, 0.6);
-    --testo-primario: #c9d1d9;
-    --testo-secondario: #8b949e;
-    --accento-neon: #58a6ff;
-    --bagliore: rgba(88, 166, 255, 0.4);
+    --sfondo-carta: #f4f1eb; /* Un bianco caldo, come carta ruvida o intonaco */
+    --testo-inchiostro: #1a1a1a; /* Quasi nero, elegante e profondo */
+    --rosso-castiglioni: #e63946; /* Un rosso audace, ironico e vitale */
+    --bordo-sottile: #d1ccc0;
 }
 
-/* Impostazioni Base e Sfondo Dinamico */
+/* Impostazioni Base */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--sfondo-principale);
-    color: var(--testo-primario);
-    line-height: 1.8;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--sfondo-carta);
+    color: var(--testo-inchiostro);
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    /* Un gradiente radiale che dà profondità alla pagina */
-    background-image: radial-gradient(circle at top center, #1f2a3a 0%, #0d1117 100%);
-    background-attachment: fixed;
-    overflow-x: hidden;
+    /* Nessun gradiente finto, solo il calore del colore solido */
 }
 
-/* Header Performativo (Il motore) */
+/* Header Editoriale */
 header {
-    text-align: center;
-    padding: 6rem 1rem 4rem;
-    position: relative;
+    text-align: left; /* Rompiamo la simmetria classica */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 3rem;
+    border-bottom: 2px solid var(--testo-inchiostro);
 }
 
 header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 600;
     margin: 0;
-    font-size: 4rem;
-    font-weight: 800;
     letter-spacing: -2px;
-    /* Effetto gradiente sul testo del titolo */
-    background: linear-gradient(90deg, #ffffff, var(--accento-neon));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* Animazione "respiro" che fa pulsare il bagliore */
-    animation: respiro 4s ease-in-out infinite alternate;
+    color: var(--testo-inchiostro);
+    /* Nessun bagliore, solo presenza scenica pura */
 }
 
-@keyframes respiro {
-    0% { text-shadow: 0 0 10px rgba(88, 166, 255, 0.1); }
-    100% { text-shadow: 0 0 25px rgba(88, 166, 255, 0.4); }
+/* Il punto rosso finale nel titolo, un dettaglio di design */
+header h1::after {
+    content: '.';
+    color: var(--rosso-castiglioni);
 }
 
 header p {
-    font-family: monospace;
-    font-size: 1.2rem;
-    color: var(--accento-neon);
-    letter-spacing: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--rosso-castiglioni);
     text-transform: uppercase;
-    opacity: 0.8;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
 }
 
 /* Struttura Centrale */
 main {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 3rem 1.5rem;
 }
 
-/* L'Archivio: Le schede dei post interagiscono col mouse */
+/* L'Archivio: Minimalista e Tangibile */
 article {
-    background: var(--sfondo-card);
-    backdrop-filter: blur(12px); /* L'effetto "vetro" che sfoca ciò che c'è dietro */
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
-    margin-bottom: 3rem;
-    border-radius: 16px;
-    /* Transizione fluida, come un sistema che reagisce a una perturbazione */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    background: transparent;
+    border: 1px solid var(--bordo-sottile);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    /* Un'ombra netta e dura, tipica del brutalismo e del design giovane */
+    box-shadow: 4px 4px 0px var(--testo-inchiostro);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff; /* Fogli bianchi appoggiati sulla scrivania */
 }
 
-/* Cosa succede quando passi il cursore sul post */
+/* Interazione Fisica: il post si "schiaccia" come un bottone vero */
 article:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--bagliore);
-    border-color: rgba(88, 166, 255, 0.3);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--rosso-castiglioni);
+    border-color: var(--rosso-castiglioni);
 }
 
 article h2 {
+    font-family: 'Playfair Display', serif;
     margin-top: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 article h2 a {
-    color: #ffffff;
+    color: var(--testo-inchiostro);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 article h2 a:hover {
-    color: var(--accento-neon);
+    color: var(--rosso-castiglioni);
 }
 
-/* Metadati: Data e Categoria */
+/* Metadati */
 small {
-    display: inline-block;
-    font-family: monospace;
-    color: var(--testo-secondario);
-    margin-bottom: 1.5rem;
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #666;
+    margin-bottom: 1rem;
     font-size: 0.85rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 0.5rem;
 }
 
-/* Nascondiamo la vecchia linea di separazione rigida */
-hr {
-    display: none; 
-}
-
-/* Footer Minimalista */
+/* Footer Ironico e Pulito */
 footer {
     text-align: center;
-    padding: 4rem 1rem 2rem;
-    font-family: monospace;
-    color: var(--testo-secondario);
+    padding: 3rem 1rem;
     font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid var(--bordo-sottile);
+    max-width: 800px;
+    margin: 0 auto;
 }
