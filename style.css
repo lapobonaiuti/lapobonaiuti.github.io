@@ -32,33 +32,34 @@ body {
    ========================================================================== */
 header {
     text-align: center;
-    padding: 4.5rem 1rem 3.5rem 1rem;
+    /* PADDING RIDOTTO: Rende la porzione crema più snella */
+    padding: 2.5rem 1rem 2rem 1rem; 
     background-color: var(--sfondo-sole);
 }
 
 header h1 {
-    font-size: 4.5rem; /* Reso molto più grande */
+    font-size: 4.5rem; 
     font-weight: 700;
     margin: 0 auto;
-    color: var(--rosso-terracotta); /* Ora è Arancione Terracotta */
+    color: var(--rosso-terracotta); 
     letter-spacing: -2px;
     
     /* Regole per centrare e mantenere l'altezza prima che arrivi il testo */
     display: block;
     width: fit-content;
-    min-height: 1.2em; /* Blocca l'altezza */
+    min-height: 1.2em; 
 }
 
 header p {
-    font-size: 1.4rem; /* Reso più grande e leggibile */
+    font-size: 1.4rem; 
     font-style: italic;
-    color: var(--blu-nostalgia); /* Blu polvere */
+    color: var(--blu-nostalgia); 
     margin: 0.5rem auto 0 auto;
     
     /* Regole per centrare e mantenere l'altezza prima che arrivi il testo */
     display: block;
     width: fit-content;
-    min-height: 1.5em; /* Blocca l'altezza */
+    min-height: 1.5em; 
 }
 
 /* Animazione del Cursore Macchina da Scrivere con i nuovi colori */
@@ -92,7 +93,8 @@ header p {
     
     height: 340px; 
     background-size: cover;
-    background-position: center 68%; 
+    /* BACKGROUND-POSITION MODIFICATO: 45% centra gli scogli */
+    background-position: center 45%; 
     background-repeat: no-repeat;
     margin-bottom: 4rem; 
     box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
