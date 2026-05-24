@@ -16,7 +16,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Evita fastidiosi scorrimenti laterali */
+    overflow-x: hidden;
 }
 
 body {
@@ -28,55 +28,49 @@ body {
 }
 
 /* ==========================================================================
-   Nuovo Header Banner Sottile (Inquadratura sulla linea del mare)
+   Nuovo Header Intimo e Minimale
    ========================================================================== */
-.site-banner {
-    width: 100vw; /* Forza il banner a toccare i bordi esatti dello schermo */
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    
-    height: 280px; /* Più sottile e filante */
-    background-size: cover;
-    background-position: center 52%; /* Centrato millimetricamente sulla linea del mare */
-    background-repeat: no-repeat;
-    
-    /* Centra la casella di testo sia in verticale che in orizzontale */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2.5rem; /* Ridotto: l'immagine ora è più vicina al primo post */
-}
-
-/* La casella "salva-contrasto" dietro al tuo nome */
-.header-box {
-    background-color: var(--sfondo-sole); 
-    padding: 1.5rem 3.5rem; /* Leggermente più compatta per adattarsi al banner sottile */
+header {
     text-align: center;
-    border-radius: 2px;
-    
-    /* Un bordo finissimo e un'ombra morbida */
-    border: 1px solid rgba(43, 38, 35, 0.08);
-    box-shadow: 0 10px 25px rgba(43, 38, 35, 0.12);
+    padding: 3.5rem 1rem 2.5rem 1rem; /* Spazio arioso in cima */
+    background-color: var(--sfondo-sole);
 }
 
-.header-box h1 {
-    font-size: 3rem; /* Ritoccato per le proporzioni della nuova altezza */
+header h1 {
+    font-size: 3rem;
     font-weight: 700;
     margin: 0;
     color: var(--testo-diario);
     letter-spacing: -1px;
 }
 
-.header-box p {
-    font-size: 1.05rem;
+header p {
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--blu-nostalgia);
     margin-top: 0.4rem;
     margin-bottom: 0;
-    word-spacing: -2px;
+}
+
+/* ==========================================================================
+   Banner Fotografico Pulito (Senza scritte sopra)
+   ========================================================================== */
+.site-banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    height: 340px; /* Più respiro per non tagliare lo scoglio */
+    background-size: cover;
+    background-position: center 75%; /* Inquadratura perfetta su scoglio e mare */
+    background-repeat: no-repeat;
+    margin-bottom: 4rem; /* Stacco elegante prima dei post */
+    
+    /* Un leggero riflesso bruciato ai bordi per fare molto pellicola */
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
 }
 
 /* ==========================================================================
@@ -87,12 +81,11 @@ body {
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
-    flex-direction: column; /* Su mobile si mettono uno sotto l'altro */
+    flex-direction: column;
     gap: 3rem;
     box-sizing: border-box;
 }
 
-/* Layout per schermi più grandi (Tablet e PC) */
 @media (min-width: 768px) {
     .layout-container {
         flex-direction: row;
@@ -103,7 +96,7 @@ body {
         width: 250px;
         flex-shrink: 0;
         position: sticky;
-        top: 2rem; /* La sidebar resta fissa quando scorri la pagina */
+        top: 2rem;
     }
 
     main {
@@ -143,7 +136,7 @@ body {
 }
 
 .sidebar ul {
-    list-style: none; /* Rimuove i pallini standard */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -174,7 +167,7 @@ body {
    ========================================================================== */
 article {
     background-color: var(--carta-morbida);
-    border: 1px solid rgba(43, 38, 35, 0.08); /* Effetto bordo foglio */
+    border: 1px solid rgba(43, 38, 35, 0.08);
     border-radius: 2px;
     padding: 2.5rem;
     margin-bottom: 3rem;
@@ -217,18 +210,18 @@ small {
 article p {
     font-size: 1rem;
     color: var(--testo-diario);
-    text-align: justify; /* Effetto blocco giustificato da macchina da scrivere */
+    text-align: justify;
 }
 
 /* ==========================================================================
-   Stile delle eventuali fotografie inserite DENTRO i post
+   Stile delle fotografie nei post
    ========================================================================== */
 article img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 2rem auto; 
-    border: 8px solid #ffffff; /* Bordo stile polaroid/stampa */
+    border: 8px solid #ffffff;
     border-radius: 2px;
     box-shadow: 0 4px 15px rgba(43, 38, 35, 0.1); 
     transition: transform 0.4s ease, box-shadow 0.4s ease;
