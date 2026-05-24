@@ -1,118 +1,119 @@
-/* Variabili - Palette "Salotto Milanese" */
+/* ==========================================================================
+   Palette "Estate '85 / Crema e Nostalgia"
+   ========================================================================== */
 :root {
-    --sfondo-carta: #f4f1eb; /* Un bianco caldo, come carta ruvida o intonaco */
-    --testo-inchiostro: #1a1a1a; /* Quasi nero, elegante e profondo */
-    --rosso-castiglioni: #e63946; /* Un rosso audace, ironico e vitale */
-    --bordo-sottile: #d1ccc0;
+    --sfondo-sole: #fbf8f3;      /* Bianco lino sbiadito, caldo e riposante */
+    --testo-diario: #2b2623;     /* Un marrone bruciato scurissimo, molto più morbido del nero */
+    --rosso-terracotta: #c95a49; /* Il rosso dei mattoni al sole, caldo e nostalgico */
+    --blu-nostalgia: #5a7d8c;    /* Il blu del mare di Normandia o di una camicia di jeans sbiadita */
+    --carta-morbida: #f5efe6;   /* Il colore delle pagine di un vecchio libro tascabile */
 }
 
-/* Impostazioni Base */
+/* Impostazioni Base - Atmosfera Analogica */
 body {
-    font-family: 'Space Grotesk', sans-serif;
-    background-color: var(--sfondo-carta);
-    color: var(--testo-inchiostro);
-    line-height: 1.6;
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--sfondo-sole);
+    color: var(--testo-diario);
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    /* Nessun gradiente finto, solo il calore del colore solido */
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Header Editoriale */
+/* Header Poetico e Leggero */
 header {
-    text-align: left; /* Rompiamo la simmetria classica */
-    max-width: 800px;
+    text-align: center; /* Torniamo alla simmetria classica, più intima */
+    max-width: 700px;
     margin: 0 auto;
-    padding: 6rem 1.5rem 3rem;
-    border-bottom: 2px solid var(--testo-inchiostro);
+    padding: 7rem 1.5rem 4rem;
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif; /* Un font graziato, elegante e cinematografico */
+    font-size: 4.5rem;
+    font-weight: 400;
+    font-style: italic; /* L'italico dà subito quell'aria sognante e letteraria */
     margin: 0;
-    letter-spacing: -2px;
-    color: var(--testo-inchiostro);
-    /* Nessun bagliore, solo presenza scenica pura */
-}
-
-/* Il punto rosso finale nel titolo, un dettaglio di design */
-header h1::after {
-    content: '.';
-    color: var(--rosso-castiglioni);
+    color: var(--testo-diario);
 }
 
 header p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--rosso-castiglioni);
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--blu-nostalgia);
     margin-top: 0.5rem;
+    letter-spacing: 1px;
 }
 
 /* Struttura Centrale */
 main {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
 }
 
-/* L'Archivio: Minimalista e Tangibile */
+/* I Post: Come Pagine di un Diario o Polaroid */
 article {
-    background: transparent;
-    border: 1px solid var(--bordo-sottile);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    /* Un'ombra netta e dura, tipica del brutalismo e del design giovane */
-    box-shadow: 4px 4px 0px var(--testo-inchiostro);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    background-color: #ffffff; /* Fogli bianchi appoggiati sulla scrivania */
+    background-color: var(--carta-morbida);
+    border: none; /* Via i bordi netti */
+    border-radius: 4px; /* Un accenno di curvatura per ammorbidire le forme */
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    /* Un'ombra impercettibile, come un foglio appoggiato al tavolo */
+    box-shadow: 0 4px 20px rgba(43, 38, 35, 0.04); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Interazione Fisica: il post si "schiaccia" come un bottone vero */
+/* Movimento cinematico e fluido al passaggio del mouse */
 article:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--rosso-castiglioni);
-    border-color: var(--rosso-castiglioni);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(43, 38, 35, 0.08);
 }
 
 article h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     margin-top: 0;
-    font-size: 2.2rem;
-    letter-spacing: -0.5px;
+    font-size: 2.4rem;
+    font-weight: 500;
     line-height: 1.2;
 }
 
 article h2 a {
-    color: var(--testo-inchiostro);
+    color: var(--testo-diario);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 article h2 a:hover {
-    color: var(--rosso-castiglioni);
+    color: var(--rosso-terracotta);
 }
 
-/* Metadati */
+/* Scritte piccole / Date */
 small {
     display: block;
-    font-family: 'Space Grotesk', sans-serif;
-    color: #666;
-    margin-bottom: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--blu-nostalgia);
+    margin-bottom: 1.5rem;
     font-size: 0.85rem;
-    letter-spacing: 1px;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
-/* Footer Ironico e Pulito */
+/* Testo dei post */
+article p {
+    font-size: 1.05rem;
+    color: rgba(43, 38, 35, 0.9);
+}
+
+/* Footer Sottile */
 footer {
     text-align: center;
-    padding: 3rem 1rem;
-    font-size: 0.9rem;
-    color: #888;
-    border-top: 1px solid var(--bordo-sottile);
-    max-width: 800px;
+    padding: 5rem 1rem 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--blu-nostalgia);
+    max-width: 700px;
     margin: 0 auto;
 }
