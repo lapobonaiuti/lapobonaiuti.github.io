@@ -103,7 +103,7 @@
                 titleIndex++;
                 setTimeout(typeTitle, typeSpeed);
             } else {
-                // Quando il titolo finisce, rimuove il cursore dal titolo e passa al sottotitolo
+                // Quando il titolo finisce, rimuove il cursore dal titolo e passa al sottotitolo (che va a capo naturalmente essendo un tag <p>)
                 titleEl.style.borderRight = "none";
                 subtitleEl.classList.add('typing-subtitle');
                 setTimeout(typeSubtitle, 500); // Pausa di mezzo secondo prima del sottotitolo
@@ -129,8 +129,5 @@
             setTimeout(typeTitle, 300);
         });
     </script>
-</body>
-</html>
-    </footer>
 </body>
 </html>
