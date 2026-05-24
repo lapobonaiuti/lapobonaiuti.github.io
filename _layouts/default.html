@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
-    <header>
-        <h1>lapo :)</h1>
-        <p>turbine in moto</p>
+
+    <header class="site-banner" style="background-image: url('{{ '/images/sfondo.JPG' | relative_url }}');">
+        <div class="header-box">
+            <h1>lapo :)</h1>
+            <p>turbine in moto</p>
+        </div>
     </header>
 
     <div class="layout-container">
@@ -25,33 +28,48 @@
             <div class="category-group">
                 <h4>Il tempo libero</h4>
                 <ul>
-                    {% for post in site.categories["il tempo libero"] %}
-                        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                    {% else %}
-                        <li class="empty">Nessun appunto</li>
+                    {% assign found = false %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains "il tempo libero" %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% assign found = true %}
+                        {% endif %}
                     {% endfor %}
+                    {% if found == false %}
+                        <li class="empty">Nessun appunto</li>
+                    {% endif %}
                 </ul>
             </div>
 
             <div class="category-group">
                 <h4>Si girella</h4>
                 <ul>
-                    {% for post in site.categories["si girella"] %}
-                        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                    {% else %}
-                        <li class="empty">Nessun appunto</li>
+                    {% assign found = false %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains "si girella" %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% assign found = true %}
+                        {% endif %}
                     {% endfor %}
+                    {% if found == false %}
+                        <li class="empty">Nessun appunto</li>
+                    {% endif %}
                 </ul>
             </div>
 
             <div class="category-group">
                 <h4>La fisica</h4>
                 <ul>
-                    {% for post in site.categories["la fisica"] %}
-                        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                    {% else %}
-                        <li class="empty">Nessun appunto</li>
+                    {% assign found = false %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains "la fisica" %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% assign found = true %}
+                        {% endif %}
                     {% endfor %}
+                    {% if found == false %}
+                        <li class="empty">Nessun appunto</li>
+                    {% endif %}
                 </ul>
             </div>
         </aside>
