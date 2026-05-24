@@ -1,52 +1,15 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lapo :) | Archivio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>lapo :)</h1>
-        <p>turbine in moto</p>
-        
-        <nav>
-            <ul>
-                <li><a href="#"> omnia </a></li>
-                <li><a href="#"> la fisica </a></li>
-                <li><a href="#"> il tempo libero </a></li>         
-                <li><a href="#"> si girella </a></li>
-            </ul>
-        </nav>
-    </header>
+---
+layout: default
+title: Il mio Archivio
+---
 
-    <main>
-        <section class="timeline">
-            
-            <article class="post">
-                <div class="post-meta">
-                    <span class="data">24 Maggio 2026</span>
-                    <span class="tag-categoria">il tempo libero</span>
-                </div>
-                <h2><a href="#">La colonna sonora per studiare</a></h2>
-                <p>Oggi ho scoperto questo album incredibile che mi sta svoltando lo studio della meccanica statistica...</p>
-            </article>
-
-            <article class="post">
-                <div class="post-meta">
-                    <span class="data">20 Maggio 2026</span>
-                    <span class="tag-categoria">Pensieri</span>
-                </div>
-                <h2><a href="#">Turbine in moto davvero</a></h2>
-                <p>Riflessioni sparse sulla prima settimana di magistrale. Il salto dalla triennale si sente, ma...</p>
-            </article>
-
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 lapo, creato con GitHub Pages.</p>
-    </footer>
-</body>
-</html>
+<section class="archivio">
+  {% for post in site.posts %}
+    <article>
+        <p><small>{{ post.date | date: "%d/%m/%Y" }} - Categoria: {{ post.categories | first }}</small></p>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt }}</p>
+        <hr>
+    </article>
+  {% endfor %}
+</section>
