@@ -1,59 +1,127 @@
-/* Impostazioni di base */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+/* Variabili di colore e stile - Tema profondo ed elegante */
+:root {
+    --sfondo-principale: #0d1117;
+    --sfondo-card: rgba(22, 27, 34, 0.6);
+    --testo-primario: #c9d1d9;
+    --testo-secondario: #8b949e;
+    --accento-neon: #58a6ff;
+    --bagliore: rgba(88, 166, 255, 0.4);
 }
 
-/* Stile dell'intestazione (Header) */
+/* Impostazioni Base e Sfondo Dinamico */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--sfondo-principale);
+    color: var(--testo-primario);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    /* Un gradiente radiale che dà profondità alla pagina */
+    background-image: radial-gradient(circle at top center, #1f2a3a 0%, #0d1117 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Header Performativo (Il motore) */
 header {
-    background-color: #2c3e50;
-    color: #ffffff;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 6rem 1rem 4rem;
+    position: relative;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    /* Effetto gradiente sul testo del titolo */
+    background: linear-gradient(90deg, #ffffff, var(--accento-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Animazione "respiro" che fa pulsare il bagliore */
+    animation: respiro 4s ease-in-out infinite alternate;
 }
 
-/* Stile del corpo centrale */
+@keyframes respiro {
+    0% { text-shadow: 0 0 10px rgba(88, 166, 255, 0.1); }
+    100% { text-shadow: 0 0 25px rgba(88, 166, 255, 0.4); }
+}
+
+header p {
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: var(--accento-neon);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Struttura Centrale */
 main {
-    max-width: 800px; /* Mantiene il testo leggibile su schermi grandi */
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-/* Stile dei singoli articoli (Post) */
-.post {
-    background: #ffffff;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+/* L'Archivio: Le schede dei post interagiscono col mouse */
+article {
+    background: var(--sfondo-card);
+    backdrop-filter: blur(12px); /* L'effetto "vetro" che sfoca ciò che c'è dietro */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    border-radius: 16px;
+    /* Transizione fluida, come un sistema che reagisce a una perturbazione */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-.post h2 {
+/* Cosa succede quando passi il cursore sul post */
+article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--bagliore);
+    border-color: rgba(88, 166, 255, 0.3);
+}
+
+article h2 {
     margin-top: 0;
-    color: #2c3e50;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
 }
 
-.date {
-    color: #888;
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-bottom: 1rem;
+article h2 a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Stile del piè di pagina (Footer) */
+article h2 a:hover {
+    color: var(--accento-neon);
+}
+
+/* Metadati: Data e Categoria */
+small {
+    display: inline-block;
+    font-family: monospace;
+    color: var(--testo-secondario);
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+/* Nascondiamo la vecchia linea di separazione rigida */
+hr {
+    display: none; 
+}
+
+/* Footer Minimalista */
 footer {
     text-align: center;
-    padding: 2rem;
-    background-color: #2c3e50;
-    color: #ffffff;
-    margin-top: 3rem;
+    padding: 4rem 1rem 2rem;
+    font-family: monospace;
+    color: var(--testo-secondario);
+    font-size: 0.9rem;
 }
