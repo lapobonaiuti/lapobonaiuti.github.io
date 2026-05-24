@@ -14,8 +14,8 @@
 <body>
 
     <header>
-        <h1>lapo :)</h1>
-        <p>turbine in moto</p>
+        <h1 id="typewriter-title"></h1>
+        <p id="typewriter-subtitle"></p>
     </header>
 
     <div class="site-banner" style="background-image: url('{{ '/images/sfondo.JPG' | relative_url }}');"></div>
@@ -82,6 +82,55 @@
 
     <footer>
         <p>&copy; 2026 lapo - creato con GitHub Pages.</p>
+    </footer>
+
+    <script>
+        const titleText = "lapo :)";
+        const subtitleText = "turbine in moto";
+        
+        const titleEl = document.getElementById('typewriter-title');
+        const subtitleEl = document.getElementById('typewriter-subtitle');
+        
+        let titleIndex = 0;
+        let subtitleIndex = 0;
+        
+        // Velocità di battitura (in millisecondi per lettera)
+        const typeSpeed = 150; 
+
+        function typeTitle() {
+            if (titleIndex < titleText.length) {
+                titleEl.textContent += titleText.charAt(titleIndex);
+                titleIndex++;
+                setTimeout(typeTitle, typeSpeed);
+            } else {
+                // Quando il titolo finisce, rimuove il cursore dal titolo e passa al sottotitolo
+                titleEl.style.borderRight = "none";
+                subtitleEl.classList.add('typing-subtitle');
+                setTimeout(typeSubtitle, 500); // Pausa di mezzo secondo prima del sottotitolo
+            }
+        }
+
+        function typeSubtitle() {
+            if (subtitleIndex < subtitleText.length) {
+                subtitleEl.textContent += subtitleText.charAt(subtitleIndex);
+                subtitleIndex++;
+                setTimeout(typeSubtitle, typeSpeed - 30); // Il sottotitolo scrive leggermente più veloce
+            } else {
+                // Opzionale: lascia lampeggiare il cursore alla fine per 2 secondi e poi nascondilo
+                setTimeout(() => {
+                    subtitleEl.style.borderRight = "none";
+                }, 2000);
+            }
+        }
+
+        // Avvia l'effetto al caricamento della pagina
+        window.addEventListener('DOMContentLoaded', () => {
+            titleEl.classList.add('typing-title');
+            setTimeout(typeTitle, 300);
+        });
+    </script>
+</body>
+</html>
     </footer>
 </body>
 </html>
