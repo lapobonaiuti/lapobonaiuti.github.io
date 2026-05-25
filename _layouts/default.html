@@ -72,6 +72,21 @@
                     {% endif %}
                 </ul>
             </div>
+                        <div class="category-group">
+                <h4>La fisica</h4>
+                <ul>
+                    {% assign found = false %}
+                    {% for post in site.posts %}
+                        {% if post.categories contains "progettini" %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% assign found = true %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if found == false %}
+                        <li class="empty">Nessun appunto</li>
+                    {% endif %}
+                </ul>
+            </div>
         </aside>
 
         <main>
