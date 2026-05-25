@@ -13,14 +13,35 @@
 </head>
 <body>
 
-    <header>
-        <h1 id="typewriter-title"></h1>
+<header>
+        <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit;">
+            <h1 id="typewriter-title"></h1>
+        </a>
         <p id="typewriter-subtitle"></p>
     </header>
 
     <div class="site-banner" style="background-image: url('{{ '/images/sfondo.JPG' | relative_url }}');"></div>
 
     <div class="layout-container">
+        
+        <aside class="sidebar">
+            <h3 class="sidebar-title">Archivio</h3>
+            
+            <div class="category-group" style="margin-bottom: 1.5rem;">
+                <ul>
+                    <li>
+                        <a href="{{ '/' | relative_url }}" style="font-weight: 700; color: var(--rosso-terracotta);">
+                            ← torna all'inizio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="category-group">
+                <h4>Il tempo libero</h4>
+                <ul>
+                    {% assign found = false %}
+...
         
         <aside class="sidebar">
             <h3 class="sidebar-title">Archivio</h3>
