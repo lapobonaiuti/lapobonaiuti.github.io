@@ -94,7 +94,7 @@ header p {
     height: 340px; 
     background-size: cover;
     /* BACKGROUND-POSITION MODIFICATO: 45% centra gli scogli */
-    background-position: center 35%; 
+    background-position: center 25%; 
     background-repeat: no-repeat;
     margin-bottom: 4rem; 
     box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
