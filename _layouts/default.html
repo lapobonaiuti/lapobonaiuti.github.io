@@ -72,8 +72,9 @@
                     {% endif %}
                 </ul>
             </div>
-                        <div class="category-group">
-                <h4>progettini</h4>
+            
+            <div class="category-group">
+                <h4>Progettini</h4>
                 <ul>
                     {% assign found = false %}
                     {% for post in site.posts %}
@@ -97,9 +98,11 @@
 
     <footer>
         <p>&copy; 2026 lapo - creato con GitHub Pages.</p>
+        <p id="visit-counter" style="opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem;">Visite: ...</p>
     </footer>
 
     <script>
+        // --- EFFETTO MACCHINA DA SCRIVERE ---
         const titleText = "lapo :)";
         const subtitleText = "turbine in moto";
         
@@ -109,7 +112,6 @@
         let titleIndex = 0;
         let subtitleIndex = 0;
         
-        // Velocità di battitura (in millisecondi per lettera)
         const typeSpeed = 150; 
 
         function typeTitle() {
@@ -118,10 +120,9 @@
                 titleIndex++;
                 setTimeout(typeTitle, typeSpeed);
             } else {
-                // Quando il titolo finisce, rimuove il cursore dal titolo e passa al sottotitolo (che va a capo naturalmente essendo un tag <p>)
                 titleEl.style.borderRight = "none";
                 subtitleEl.classList.add('typing-subtitle');
-                setTimeout(typeSubtitle, 500); // Pausa di mezzo secondo prima del sottotitolo
+                setTimeout(typeSubtitle, 500); 
             }
         }
 
@@ -129,19 +130,37 @@
             if (subtitleIndex < subtitleText.length) {
                 subtitleEl.textContent += subtitleText.charAt(subtitleIndex);
                 subtitleIndex++;
-                setTimeout(typeSubtitle, typeSpeed - 30); // Il sottotitolo scrive leggermente più veloce
+                setTimeout(typeSubtitle, typeSpeed - 30); 
             } else {
-                // Opzionale: lascia lampeggiare il cursore alla fine per 2 secondi e poi nascondilo
                 setTimeout(() => {
                     subtitleEl.style.borderRight = "none";
                 }, 2000);
             }
         }
 
-        // Avvia l'effetto al caricamento della pagina
+        // --- CONTATORE VISITE (Tramite API esterna gratuita) ---
+        function loadVisitCounter() {
+            // Sostituisci 'lapo-diario-unico' con un nome univoco se preferisci
+            const namespace = 'lapo-diario-unico'; 
+            const key = 'homepage';
+            
+            fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('visit-counter').innerText = 'Visite: ' + data.count;
+                })
+                .catch(error => {
+                    // Se l'API fallisce o un AdBlocker la blocca, mostriamo un fallback elegante
+                    document.getElementById('visit-counter').innerText = 'Visite: n.d.';
+                    console.error('Impossibile caricare il contatore:', error);
+                });
+        }
+
+        // Avvia l'effetto e il contatore al caricamento della pagina
         window.addEventListener('DOMContentLoaded', () => {
             titleEl.classList.add('typing-title');
             setTimeout(typeTitle, 300);
+            loadVisitCounter(); // Richiama il contatore
         });
     </script>
 </body>
