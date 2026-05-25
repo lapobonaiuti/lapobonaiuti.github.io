@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<header>
+    <header>
         <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit;">
             <h1 id="typewriter-title"></h1>
         </a>
@@ -36,14 +36,6 @@
                     </li>
                 </ul>
             </div>
-            
-            <div class="category-group">
-                <h4>Il tempo libero</h4>
-                <ul>
-                    {% assign found = false %}
-        
-        <aside class="sidebar">
-            <h3 class="sidebar-title">Archivio</h3>
             
             <div class="category-group">
                 <h4>Il tempo libero</h4>
@@ -158,9 +150,8 @@
             }
         }
 
-        // --- CONTATORE VISITE (Tramite API esterna gratuita) ---
+        // --- CONTATORE VISITE ---
         function loadVisitCounter() {
-            // Sostituisci 'lapo-diario-unico' con un nome univoco se preferisci
             const namespace = 'lapo-diario-unico'; 
             const key = 'homepage';
             
@@ -170,18 +161,20 @@
                     document.getElementById('visit-counter').innerText = 'Visite: ' + data.count;
                 })
                 .catch(error => {
-                    // Se l'API fallisce o un AdBlocker la blocca, mostriamo un fallback elegante
                     document.getElementById('visit-counter').innerText = 'Visite: n.d.';
                     console.error('Impossibile caricare il contatore:', error);
                 });
         }
 
-        // Avvia l'effetto e il contatore al caricamento della pagina
+        // Avvio script
         window.addEventListener('DOMContentLoaded', () => {
             titleEl.classList.add('typing-title');
             setTimeout(typeTitle, 300);
-            loadVisitCounter(); // Richiama il contatore
+            loadVisitCounter(); 
         });
+    </script>
+</body>
+</html>
     </script>
 </body>
 </html>
